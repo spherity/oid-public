@@ -1,0 +1,124 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "id": "@id",
+    "type": "@type",
+    "EuCompanyCertificate": "https://oid.spherity.com/eucc#EuCompanyCertificate",
+    "LegalPerson": {
+      "@protected": true,
+      "@id": "https://oid.spherity.com/eucc#LegalPerson",
+      "@context": {
+        "@version": 1.1,
+        "id": "@id",
+        "type": "@type",
+        "legalName": "http://www.w3.org/ns/legal#legalName",
+        "legalFormType": "http://www.w3.org/ns/legal#legalFormType",
+        "legalIdentifier": "https://oid.spherity.com/eucc#LegalPerson_legalIdentifier",
+        "registeredAddress": {
+          "@protected": true,
+          "@id": "https://oid.spherity.com/eucc#LegalPerson_registeredAddress",
+          "@context": {
+            "@version": 1.1,
+            "id": "@id",
+            "type": "@type",
+            "post_code": "http://www.w3.org/ns/locn#post_code",
+            "post_name": "http://www.w3.org/ns/locn#post_name",
+            "thoroughfare": "http://www.w3.org/ns/locn#thoroughfare",
+            "locator_designator": "http://www.w3.org/ns/locn#locator_designator"
+          }
+        },
+        "registrationDate": {
+          "@id": "http://data.europa.eu/m8g/registrationDate",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "legalEntityStatus": {
+          "@id": "http://www.w3.org/ns/legal#companyStatus",
+          "@type": "@id"
+        },
+        "legalEntityActivity": {
+          "@id": "http://www.w3.org/ns/legal#companyActivity",
+          "@type": "@id"
+        },
+        "legalRepresentative": {
+          "@protected": true,
+          "@id": "https://oid.spherity.com/eucc#LegalPerson_legalRepresentative",
+          "@context": {
+            "@version": 1.1,
+            "id": "@id",
+            "type": "@type",
+            "legalEntityId": {
+              "@id": "https://oid.spherity.com/eucc#legalRepresentative_legalEntityId",
+              "@type": "@id"
+            },
+            "role": "https://oid.spherity.com/eucc#legalRepresentative_role",
+            "scopeOfRepresentation": "https://oid.spherity.com/eucc#legalRepresentative_scopeOfRepresentation"
+          }
+        },
+        "contactPoint": {
+          "@protected": true,
+          "@id": "https://oid.spherity.com/eucc#LegalPerson_contactPoint",
+          "@context": {
+            "@version": 1.1,
+            "id": "@id",
+            "type": "@type",
+            "contactPage": "http://data.europa.eu/m8g/contactPage",
+            "hasEmail": "http://data.europa.eu/m8g/email",
+            "hasTelephone": "http://data.europa.eu/m8g/telephone"
+          }
+        }
+      }
+    },
+    "Nace020": {
+      "@id": "https://oid.spherity.com/eucc#Nace020",
+      "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "id": "@id",
+        "type": "@type",
+        "code": "https://oid.spherity.com/eucc#Nace020_businessCode",
+        "businessDescription": "https://oid.spherity.com/eucc#Nace020_businessDescription"
+      }
+    },
+    "NaturalPerson": {
+      "@protected": true,
+      "@id": "https://oid.spherity.com/eucc#NaturalPerson",
+      "@context": {
+        "@version": 1.1,
+        "id": "@id",
+        "type": "@type",
+        "familyName": "http://schema.org/familyName",
+        "gender": "http://schema.org/gender",
+        "givenName": "http://schema.org/givenName",
+        "birthDate": "http://schema.org/birthDate",
+        "jobTitle": "http://schema.org/jobTitle",
+        "birthPlace": "https://schema.org/birthPlace",
+        "postalAddress": "https://schema.org/PostalAddress",
+        "taxDomicile": {
+          "@id": "https://oid.spherity.com/eucc#NaturalPerson_taxDomicile",
+          "@type": "http://schema.org/addressCountry"
+        },
+        "isAlive": {
+          "@id": "https://oid.spherity.com/eucc#NaturalPerson_isAlive",
+          "@type": "https://schema.org/Boolean"
+        },
+        "citizenship": {
+          "@id": "https://oid.spherity.com/eucc#NaturalPerson_citizenship",
+          "@type": "http://schema.org/addressCountry"
+        },
+        "domicile": {
+          "@id": "https://oid.spherity.com/eucc#NaturalPerson_domicile",
+          "@context": {
+            "@version": 1.1,
+            "@protected": true,
+            "id": "@id",
+            "type": "@type",
+            "postalCode": "http://schema.org/postalCode",
+            "addressLocality": "http://schema.org/addressLocality",
+            "addressCountry": "http://schema.org/addressCountry"
+          }
+        }
+      }
+    }
+  }
+}
