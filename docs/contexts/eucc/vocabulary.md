@@ -71,6 +71,8 @@ The following example shows a Legal Person Credential:
       "@language": "de",
       "@value": "Flower Power AG"
     },
+    "legalIdentifier": "DEPLPOAG.123456789",
+    "legalFormType": "Aktiengesellschaft",
     "registeredAddress": {
       "post_code": 10119,
       "post_name": "Berlin",
@@ -501,7 +503,7 @@ Natural person's job title.
 
 | Key  | Value                      |
 |------|----------------------------|
-| Term | familyName                 |
+| Term | jobTitle                   |
 | URL  | http://schema.org/jobTitle |
 
 #### 6.2.6 birthPlace {#NaturalPerson_birthPlace}
