@@ -327,11 +327,10 @@ The classification of the Legal Person as a member of a particular group in the 
 
 The address at which the Legal Person is legally registered.
 
-| Key            | Value                                                         |
-|----------------|---------------------------------------------------------------|
-| Term           | registeredAddress                                             |
-| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress   |
-| Expected Value | string                                                        |
+| Key            | Value                                         |
+|----------------|-----------------------------------------------|
+| Term           | registeredAddress                             |
+| URL            | http://data.europa.eu/m8g/registeredAddress   |
 
 #### 6.1.5 contactPoint {#LegalPerson_contactPoint}
 
