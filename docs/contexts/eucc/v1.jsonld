@@ -32,10 +32,7 @@
           "@id": "http://data.europa.eu/m8g/registrationDate",
           "@type": "http://www.w3.org/2001/XMLSchema#date"
         },
-        "legalEntityStatus": {
-          "@id": "http://www.w3.org/ns/legal#companyStatus",
-          "@type": "@id"
-        },
+        "legalEntityStatus": "http://www.w3.org/ns/legal#companyStatus",
         "legalEntityActivity": {
           "@id": "http://www.w3.org/ns/legal#companyActivity",
           "@type": "@id"
