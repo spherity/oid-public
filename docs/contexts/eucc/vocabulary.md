@@ -7,7 +7,7 @@ title: EU Company Certificate
 EU Company Vocabulary
 =====================
 
-## 1 Abstract
+## 1 Abstract {#EuCompanyCertificate}
 
 This specification describes an experimental vocabulary for asserting a EU Company Certificate.
 Enterprises can use this certificate to prove claims about themselves to business partners.
@@ -147,7 +147,7 @@ This particular credential uses key binding to bind the credential to the holder
 
 ```mermaid
 classDiagram
-    
+
     class LegalEntity{
         <<abstract>>
         id
@@ -207,11 +207,13 @@ classDiagram
     LegalEntity <|-- LegalPerson
     NaturalPerson "1" *-- "1" Domicile
 ```
+
 NaturalPerson and LegalPerson are the subjects of credentials - see [Examples](#3-examples).
 
 Please note that the classes LegalRepresentative, ContactPoint and Nace020 are aggregated, i.e. they exist only in the context of LegalPerson. Similarly, Domicile is an aggregated class that only exists in the context of NaturalPerson. LegalEntity has a composition relationship with LegalRepresentative, i.e. the LegalEntity (NaturalPerson or LegalPerson) exists independently of LegalRepresentative.
 
 Further, LegalEntity is an abstract class and can only be instantiated as NaturalPerson or LegalPerson. LegalRepresentative and ContactPoint are anonymous classes. They are instantiated as value of the corresponding property only:
+
 * LegalRepresentative is described as value of LegalPerson.legalRepresentative.
 * ContactPoint is described as value of LegalPerson.contactPoint.
 
@@ -220,8 +222,9 @@ The Nace020 class does not represent an anonymous class, as legalEntityActivity 
 ## 5 Classes
 
 This section describes the classes as defined in the information model. Please note that anonymous classes only exist as instantiated values. Therefore, they are described as value in the section of the corresponding property, i.e.:
-* LegalRepresentative is described as value of LegalPerson.legalRepresentative. 
-* ContactPoint is described as value of LegalPerson.contactPoint. 
+
+* LegalRepresentative is described as value of LegalPerson.legalRepresentative.
+* ContactPoint is described as value of LegalPerson.contactPoint.
 
 ### 5.1 LegalEntity
 
