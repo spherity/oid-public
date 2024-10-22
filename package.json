@@ -1,15 +1,16 @@
 {
-  "name": "@spherity/oid-public",
-  "version": "0.0.0",
+  "dependencies": {
+    "glob": "^11.0.0",
+    "jsonld": "^8.3.2"
+  },
   "engines": {
     "node": ">=18.0"
   },
+  "name": "@spherity/oid-public",
+  "packageManager": "pnpm@9.11.0",
   "scripts": {
     "validate:jsonld": "node ./scripts/validate-jsonld.js",
     "validate:vocab-links": "node ./scripts/validate-vocab-links.js"
   },
-  "dependencies": {
-    "glob": "^11.0.0",
-    "jsonld": "^8.3.2"
-  }
+  "version": "0.0.0"
 }
