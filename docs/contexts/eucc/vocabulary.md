@@ -74,10 +74,14 @@ The following example shows a Legal Person Credential:
     "legalIdentifier": "DEPLPOAG.123456789",
     "legalFormType": "Aktiengesellschaft",
     "registeredAddress": {
-      "post_code": 10119,
-      "post_name": "Berlin",
-      "thoroughfare": "Unter den Linden",
-      "locator_designator": 33
+      "addressArea": "",
+      "adminUnitL1": "Germany",
+      "adminUnitL2": "Berlin",
+      "fullAddress": "Unter den Linden 33 10119 Berlin, Germany",
+      "locatorDesignator": 33,
+      "postCode": 10119,
+      "postName": "Berlin",
+      "thoroughfare": "Unter den Linden"
     },
     "registrationDate": "2024-07-02T09:49:49Z",
     "legalEntityStatus": "Active",
