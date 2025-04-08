@@ -137,9 +137,14 @@ The following example represents the credential of a Natural Person:
     "gender": "Male",
     "birthDate": "1970-01-01",
     "domicile": {
-      "postalCode": "10119",
-      "addressCountry": "Germany",
-      "addressLocality": "Berlin"
+      "addressArea": "",
+      "adminUnitL1": "Germany",
+      "adminUnitL2": "Berlin",
+      "fullAddress": "Unter den Linden 33 10119 Berlin, Germany",
+      "locatorDesignator": 33,
+      "postCode": 10119,
+      "postName": "Berlin",
+      "thoroughfare": "Unter den Linden"
     }
   }
 }
@@ -199,9 +204,14 @@ classDiagram
         businessDescription
     }
     class Domicile{
-        postalCode,
-        addressCountry,
-        addressLocality
+        fullAddress,
+        adminUnitL1,
+        adminUnitL2,
+        addressArea,
+        postCode,
+        postName,
+        thoroughfare,
+        locatorDesignator
     }
     LegalPerson "1" *-- "0..1" ContactPoint
     LegalPerson "1" *-- "0..1" Nace020
@@ -564,46 +574,10 @@ Natural person's citizenship.
 
 Natural person's current domicile.
 
-| Key   | Value                                                |
-|-------|------------------------------------------------------|
-| Term  | domicile                                             |
-| URL   | https://oid.spherity.com/eucc#NaturalPerson_domicile |
-| Value | Domicile                                             |
-
-#### Domicile
-
-| Field           | Description                                                                                                 |
-|-----------------|-------------------------------------------------------------------------------------------------------------|
-| postalCode      | The postal code. For example, 94043.                                                                        |
-| addressCountry  | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.         |
-| addressLocality | The locality in which the street address is, and which is in the region. For example, Mountain View.        |
-
-##### 6.2.11.1 postalCode {#NaturalPerson_domicile_postalCode}
-
-Natural person's domicile postal code.
-
-| Key   | Value                                                            |
-|-------|------------------------------------------------------------------|
-| Term  | postalCode                                                       |
-| URL   | https://schema.org/postalCode                                    |
-
-##### 6.2.11.2 addressLocality {#NaturalPerson_domicile_addressLocality}
-
-Natural person's domicile address.
-
-| Key  | Value                             |
-|------|-----------------------------------|
-| Term | addressLocality                   |
-| URL  | http://schema.org/addressLocality |
-
-##### 6.2.11.3 addressCountry {#NaturalPerson_domicile_addressCountry}
-
-Natural person's domicile country code.
-
-| Key  | Value                                                                |
-|------|----------------------------------------------------------------------|
-| Term | addressCountry                                                       |
-| URL  | http://schema.org/addressCountry                                     |
+| Key            | Value                                         |
+|----------------|-----------------------------------------------|
+| Term           | registeredAddress                             |
+| URL            | http://data.europa.eu/m8g/registeredAddress   |
 
 ### 6.3 Properties of Nace020
 

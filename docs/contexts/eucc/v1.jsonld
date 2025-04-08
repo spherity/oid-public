@@ -108,15 +108,20 @@
           "@type": "http://schema.org/addressCountry"
         },
         "domicile": {
+          "@protected": true,
           "@id": "https://oid.spherity.com/eucc#NaturalPerson_domicile",
           "@context": {
             "@version": 1.1,
-            "@protected": true,
             "id": "@id",
             "type": "@type",
-            "postalCode": "http://schema.org/postalCode",
-            "addressLocality": "http://schema.org/addressLocality",
-            "addressCountry": "http://schema.org/addressCountry"
+            "fullAddress": "http://www.w3.org/ns/locn#fullAddress",
+            "adminUnitL1": "http://www.w3.org/ns/locn#adminUnitL1",
+            "adminUnitL2": "http://www.w3.org/ns/locn#adminUnitL2",
+            "addressArea": "https://www.w3.org/ns/legacy_locn#locn:addressArea",
+            "postCode": "http://www.w3.org/ns/locn#postCode",
+            "postName": "http://www.w3.org/ns/locn#postName",
+            "thoroughfare": "http://www.w3.org/ns/locn#thoroughfare",
+            "locatorDesignator": "http://www.w3.org/ns/locn#locatorDesignator"
           }
         }
       }
