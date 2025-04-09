@@ -22,10 +22,13 @@
             "@version": 1.1,
             "id": "@id",
             "type": "@type",
-            "post_code": "http://www.w3.org/ns/locn#post_code",
-            "post_name": "http://www.w3.org/ns/locn#post_name",
+            "adminUnitL1": "http://www.w3.org/ns/locn#adminUnitL1",
+            "adminUnitL2": "http://www.w3.org/ns/locn#adminUnitL2",
+            "addressArea": "https://www.w3.org/ns/legacy_locn#locn:addressArea",
+            "postCode": "http://www.w3.org/ns/locn#postCode",
+            "postName": "http://www.w3.org/ns/locn#postName",
             "thoroughfare": "http://www.w3.org/ns/locn#thoroughfare",
-            "locator_designator": "http://www.w3.org/ns/locn#locator_designator"
+            "locatorDesignator": "http://www.w3.org/ns/locn#locatorDesignator"
           }
         },
         "registrationDate": {
@@ -104,15 +107,15 @@
           "@type": "http://schema.org/addressCountry"
         },
         "domicile": {
+          "@protected": true,
           "@id": "https://oid.spherity.com/eucc#NaturalPerson_domicile",
           "@context": {
             "@version": 1.1,
-            "@protected": true,
             "id": "@id",
             "type": "@type",
-            "postalCode": "http://schema.org/postalCode",
-            "addressLocality": "http://schema.org/addressLocality",
-            "addressCountry": "http://schema.org/addressCountry"
+            "adminUnitL1": "http://www.w3.org/ns/locn#adminUnitL1",
+            "postCode": "http://www.w3.org/ns/locn#postCode",
+            "postName": "http://www.w3.org/ns/locn#postName"
           }
         }
       }

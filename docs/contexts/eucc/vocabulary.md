@@ -74,10 +74,13 @@ The following example shows a Legal Person Credential:
     "legalIdentifier": "DEPLPOAG.123456789",
     "legalFormType": "Aktiengesellschaft",
     "registeredAddress": {
-      "post_code": 10119,
-      "post_name": "Berlin",
-      "thoroughfare": "Unter den Linden",
-      "locator_designator": 33
+      "addressArea": "Friedrichswerder",
+      "adminUnitL1": "Germany",
+      "adminUnitL2": "Berlin",
+      "locatorDesignator": "33",
+      "postCode": 10119,
+      "postName": "Berlin",
+      "thoroughfare": "Unter den Linden"
     },
     "registrationDate": "2024-07-02T09:49:49Z",
     "legalEntityStatus": "Active",
@@ -133,9 +136,9 @@ The following example represents the credential of a Natural Person:
     "gender": "Male",
     "birthDate": "1970-01-01",
     "domicile": {
-      "postalCode": "10119",
-      "addressCountry": "Germany",
-      "addressLocality": "Berlin"
+      "adminUnitL1": "Germany",
+      "postCode": 10119,
+      "postName": "Berlin"
     }
   }
 }
@@ -195,9 +198,9 @@ classDiagram
         businessDescription
     }
     class Domicile{
-        postalCode,
-        addressCountry,
-        addressLocality
+        adminUnitL1,
+        postCode,
+        postName
     }
     LegalPerson "1" *-- "0..1" ContactPoint
     LegalPerson "1" *-- "0..1" Nace020
@@ -234,10 +237,10 @@ A LegalEntity is either a NaturalPerson (human being) or LegalPerson (organisati
 
 The Legal Person uniquely identifies a legal person, as defined by the EWC. Please note that the Business Core Vocabulary refers to LegalPerson using the term LegalEntity.
 
-| Key            | Value                                     |
-|----------------|-------------------------------------------|
-| Term           | LegalPerson                               |
-| URL            | https://oid.spherity.com/eucc#LegalPerson |
+| Key  | Value                                     |
+|------|-------------------------------------------|
+| Term | LegalPerson                               |
+| URL  | https://oid.spherity.com/eucc#LegalPerson |
 
 | Field               | Description                                                                                                         |
 |---------------------|---------------------------------------------------------------------------------------------------------------------|
@@ -255,10 +258,10 @@ The Legal Person uniquely identifies a legal person, as defined by the EWC. Plea
 
 A natural person describes a human who may act as a legal entity.
 
-| Key            | Value                                        |
-|----------------|----------------------------------------------|
-| Term           | NaturalPerson                                |
-| URL            | https://oid.spherity.com/eucc#NaturalPerson  |
+| Key  | Value                                       |
+|------|---------------------------------------------|
+| Term | NaturalPerson                               |
+| URL  | https://oid.spherity.com/eucc#NaturalPerson |
 
 | Field         | Description                          |
 |---------------|--------------------------------------|
@@ -278,15 +281,15 @@ A natural person describes a human who may act as a legal entity.
 
 Statistical Classification of Economic Activities in the European Community
 
-| Key            | Value                                 |
-|----------------|---------------------------------------|
-| Term           | Nace020                               |
-| URL            | https://oid.spherity.com/eucc#Nace020 |
+| Key  | Value                                 |
+|------|---------------------------------------|
+| Term | Nace020                               |
+| URL  | https://oid.spherity.com/eucc#Nace020 |
 
-| Field                 | Description                                                                   |
-|-----------------------|-------------------------------------------------------------------------------|
-| businessCode          | Code of the economic activity.                                                |
-| businessDescription   | Informational description of the economic activity as classified by NACE.     |
+| Field               | Description                                                               |
+|---------------------|---------------------------------------------------------------------------|
+| businessCode        | Code of the economic activity.                                            |
+| businessDescription | Informational description of the economic activity as classified by NACE. |
 
 ## 6 Properties
 
@@ -296,11 +299,11 @@ Statistical Classification of Economic Activities in the European Community
 
 The name under which the Legal Person is legally registered.
 
-| Key            | Value                                  |
-|----------------|----------------------------------------|
-| Term           | legalName                              |
-| URL            | http://www.w3.org/ns/legal#legalName   |
-| Expected Value | language-tagged string                 |
+| Key            | Value                                |
+|----------------|--------------------------------------|
+| Term           | legalName                            |
+| URL            | http://www.w3.org/ns/legal#legalName |
+| Expected Value | language-tagged string               |
 
 #### 6.1.2 legalIdentifier {#LegalPerson_legalIdentifier}
 
@@ -320,20 +323,90 @@ Example from Bolagsverket: SEBOLREG.5560678965s
 
 The classification of the Legal Person as a member of a particular group in the context of legal registration.
 
-| Key            | Value                                     |
-|----------------|-------------------------------------------|
-| Term           | legalFormType                             |
-| URL            | http://www.w3.org/ns/legal#legalFormType  |
-| Expected Value | string                                    |
+| Key            | Value                                    |
+|----------------|------------------------------------------|
+| Term           | legalFormType                            |
+| URL            | http://www.w3.org/ns/legal#legalFormType |
+| Expected Value | string                                   |
 
 #### 6.1.4 registeredAddress {#LegalPerson_registeredAddress}
 
 The address at which the Legal Person is legally registered.
 
-| Key            | Value                                         |
-|----------------|-----------------------------------------------|
-| Term           | registeredAddress                             |
-| URL            | http://data.europa.eu/m8g/registeredAddress   |
+| Key  | Value                                       |
+|------|---------------------------------------------|
+| Term | registeredAddress                           |
+| URL  | http://data.europa.eu/m8g/registeredAddress |
+
+##### 6.1.4.1 adminUnitL1 {#LegalPerson_registeredAddress_adminUnitL1}
+
+Geographical name of the administrative unit (e.g. country)
+
+| Key            | Value                                                                   |
+|----------------|-------------------------------------------------------------------------|
+| Term           | adminUnitL1                                                             |
+| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_adminUnitL1 |
+| Expected Value | http://www.w3.org/ns/locn#adminUnitL1                                   |
+
+##### 6.1.4.2 adminUnitL2 {#LegalPerson_registeredAddress_adminUnitL2}
+
+Geographical name of the administrative unit within the adminUnitL1 (e.g. state)
+
+| Key            | Value                                                                   |
+|----------------|-------------------------------------------------------------------------|
+| Term           | adminUnitL2                                                             |
+| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_adminUnitL2 |
+| Expected Value | http://www.w3.org/ns/locn#adminUnitL2                                   |
+
+##### 6.1.4.3 addressArea {#LegalPerson_registeredAddress_addressArea}
+
+Area within the post code reagion (e.g. name of village)
+
+| Key            | Value                                                                   |
+|----------------|-------------------------------------------------------------------------|
+| Term           | addressArea                                                             |
+| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_addressArea |
+| Expected Value | http://www.w3.org/ns/locn#addressArea                                   |
+
+##### 6.1.4.4 postCode {#LegalPerson_registeredAddress_postCode}
+
+Post code of the city
+
+| Key            | Value                                                                |
+|----------------|----------------------------------------------------------------------|
+| Term           | postCode                                                             |
+| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_postCode |
+| Expected Value | http://www.w3.org/ns/locn#postCode                                   |
+
+##### 6.1.4.5 postName {#LegalPerson_registeredAddress_postName}
+
+Reflects the city name
+
+| Key            | Value                                                                |
+|----------------|----------------------------------------------------------------------|
+| Term           | postName                                                             |
+| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_postName |
+| Expected Value | http://www.w3.org/ns/locn#postName                                   |
+
+##### 6.1.4.6 thoroughfare {#LegalPerson_registeredAddress_thoroughfare}
+
+Reflects the street name
+
+| Key            | Value                                                                    |
+|----------------|--------------------------------------------------------------------------|
+| Term           | thoroughfare                                                             |
+| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_thoroughfare |
+| Expected Value | http://www.w3.org/ns/locn#thoroughfare                                   |
+
+##### 6.1.4.7 locatorDesignator {#LegalPerson_registeredAddress_locatorDesignator}
+
+House number and similar
+
+| Key            | Value                                                                         |
+|----------------|-------------------------------------------------------------------------------|
+| Term           | locatorDesignator                                                             |
+| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_locatorDesignator |
+| Expected Value | http://www.w3.org/ns/locn#locatorDesignator                                   |
 
 #### 6.1.5 contactPoint {#LegalPerson_contactPoint}
 
@@ -347,11 +420,11 @@ Information (e.g. e-mail address, telephone number) of a legal person through wh
 
 #### ContactPoint
 
-| Field         | Description                                                              |
-|---------------|--------------------------------------------------------------------------|
-| contactPage   | A web page that could be used to reach out the Contact Point.            |
-| hasEmail      | An electronic address through which the Contact Point can be contacted.  |
-| hasTelephone  | A telephone number through which the Contact Point can be contacted.     |
+| Field        | Description                                                             |
+|--------------|-------------------------------------------------------------------------|
+| contactPage  | A web page that could be used to reach out the Contact Point.           |
+| hasEmail     | An electronic address through which the Contact Point can be contacted. |
+| hasTelephone | A telephone number through which the Contact Point can be contacted.    |
 
 ##### 6.1.5.1 contactPage {#LegalPerson_contactPoint_contactPage}
 
@@ -560,46 +633,40 @@ Natural person's citizenship.
 
 Natural person's current domicile.
 
-| Key   | Value                                                |
-|-------|------------------------------------------------------|
-| Term  | domicile                                             |
-| URL   | https://oid.spherity.com/eucc#NaturalPerson_domicile |
-| Value | Domicile                                             |
+| Key  | Value                                                |
+|------|------------------------------------------------------|
+| Term | domicile                                             |
+| URL  | https://oid.spherity.com/eucc#NaturalPerson_domicile |
 
-#### Domicile
+##### 6.2.11.1 adminUnitL1 {#NaturalPerson_domicile_adminUnitL1}
 
-| Field           | Description                                                                                                 |
-|-----------------|-------------------------------------------------------------------------------------------------------------|
-| postalCode      | The postal code. For example, 94043.                                                                        |
-| addressCountry  | The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.         |
-| addressLocality | The locality in which the street address is, and which is in the region. For example, Mountain View.        |
+Geographical name of the administrative unit (e.g. country)
 
-##### 6.2.11.1 postalCode {#NaturalPerson_domicile_postalCode}
+| Key            | Value                                                            |
+|----------------|------------------------------------------------------------------|
+| Term           | adminUnitL1                                                      |
+| URL            | https://oid.spherity.com/eucc#NaturalPerson_domicile_adminUnitL1 |
+| Expected Value | http://www.w3.org/ns/locn#adminUnitL1                            |
 
-Natural person's domicile postal code.
+##### 6.2.11.4 postCode {#NaturalPerson_domicile_postCode}
 
-| Key   | Value                                                            |
-|-------|------------------------------------------------------------------|
-| Term  | postalCode                                                       |
-| URL   | https://schema.org/postalCode                                    |
+Post code of the city
 
-##### 6.2.11.2 addressLocality {#NaturalPerson_domicile_addressLocality}
+| Key            | Value                                                         |
+|----------------|---------------------------------------------------------------|
+| Term           | postCode                                                      |
+| URL            | https://oid.spherity.com/eucc#NaturalPerson_domicile_postCode |
+| Expected Value | http://www.w3.org/ns/locn#postCode                            |
 
-Natural person's domicile address.
+##### 6.2.11.5 postName {#NaturalPerson_domicile_postName}
 
-| Key  | Value                             |
-|------|-----------------------------------|
-| Term | addressLocality                   |
-| URL  | http://schema.org/addressLocality |
+Reflects the city name
 
-##### 6.2.11.3 addressCountry {#NaturalPerson_domicile_addressCountry}
-
-Natural person's domicile country code.
-
-| Key  | Value                                                                |
-|------|----------------------------------------------------------------------|
-| Term | addressCountry                                                       |
-| URL  | http://schema.org/addressCountry                                     |
+| Key            | Value                                                         |
+|----------------|---------------------------------------------------------------|
+| Term           | postName                                                      |
+| URL            | https://oid.spherity.com/eucc#NaturalPerson_domicile_postName |
+| Expected Value | http://www.w3.org/ns/locn#postName                            |
 
 ### 6.3 Properties of Nace020
 
