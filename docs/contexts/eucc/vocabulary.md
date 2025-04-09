@@ -74,10 +74,9 @@ The following example shows a Legal Person Credential:
     "legalIdentifier": "DEPLPOAG.123456789",
     "legalFormType": "Aktiengesellschaft",
     "registeredAddress": {
-      "addressArea": "",
+      "addressArea": "Friedrichswerder",
       "adminUnitL1": "Germany",
       "adminUnitL2": "Berlin",
-      "fullAddress": "Unter den Linden 33 10119 Berlin, Germany",
       "locatorDesignator": 33,
       "postCode": 10119,
       "postName": "Berlin",
@@ -137,14 +136,9 @@ The following example represents the credential of a Natural Person:
     "gender": "Male",
     "birthDate": "1970-01-01",
     "domicile": {
-      "addressArea": "",
       "adminUnitL1": "Germany",
-      "adminUnitL2": "Berlin",
-      "fullAddress": "Unter den Linden 33 10119 Berlin, Germany",
-      "locatorDesignator": 33,
       "postCode": 10119,
-      "postName": "Berlin",
-      "thoroughfare": "Unter den Linden"
+      "postName": "Berlin"
     }
   }
 }
@@ -204,7 +198,6 @@ classDiagram
         businessDescription
     }
     class Domicile{
-        fullAddress,
         adminUnitL1,
         adminUnitL2,
         addressArea,
@@ -361,7 +354,7 @@ Geographical name of the administrative unit (e.g. country)
 
 ##### 6.1.4.2 adminUnitL2 {#LegalPerson_registeredAddress_adminUnitL2}
 
-geographical name of the administrative unit within the adminUnitL1 (e.g. state)
+Geographical name of the administrative unit within the adminUnitL1 (e.g. state)
 
 | Key            | Value                                                           |
 |----------------|-----------------------------------------------------------------|
@@ -371,7 +364,7 @@ geographical name of the administrative unit within the adminUnitL1 (e.g. state)
 
 ##### 6.1.4.3 addressArea {#LegalPerson_registeredAddress_addressArea}
 
-area within the post code reagion (e.g. name of village)
+Area within the post code reagion (e.g. name of village)
 
 | Key            | Value                                                           |
 |----------------|-----------------------------------------------------------------|
@@ -381,7 +374,7 @@ area within the post code reagion (e.g. name of village)
 
 ##### 6.1.4.4 postCode {#LegalPerson_registeredAddress_postCode}
 
-post code of the city
+Post code of the city
 
 | Key            | Value                                                           |
 |----------------|-----------------------------------------------------------------|
@@ -646,80 +639,38 @@ Natural person's current domicile.
 
 | Key  | Value                                       |
 |------|---------------------------------------------|
-| Term | registeredAddress                           |
-| URL  | http://data.europa.eu/m8g/registeredAddress |
+| Term | domicile                           |
+| URL  | https://oid.spherity.com/eucc#NaturalPerson_domicile |
 
-
-##### 6.2.11.1 adminUnitL1 {#LegalPerson_registeredAddress_adminUnitL1}
+##### 6.2.11.1 adminUnitL1 {#NaturalPerson_domicile_adminUnitL1}
 
 Geographical name of the administrative unit (e.g. country)
 
 | Key            | Value                                                           |
 |----------------|-----------------------------------------------------------------|
 | Term           | adminUnitL1                                                    |
-| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_adminUnitL1 |
+| URL            | https://oid.spherity.com/eucc#NaturalPerson_domicile_adminUnitL1 |
 | Expected Value | http://www.w3.org/ns/locn#adminUnitL1                                      |
 
-##### 6.2.11.2 adminUnitL2 {#LegalPerson_registeredAddress_adminUnitL2}
+##### 6.2.11.4 postCode {#NaturalPerson_domicile_postCode}
 
-geographical name of the administrative unit within the adminUnitL1 (e.g. state)
-
-| Key            | Value                                                           |
-|----------------|-----------------------------------------------------------------|
-| Term           | adminUnitL2                                                    |
-| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_adminUnitL2 |
-| Expected Value | http://www.w3.org/ns/locn#adminUnitL2                                      |
-
-##### 6.2.11.3 addressArea {#LegalPerson_registeredAddress_addressArea}
-
-area within the post code reagion (e.g. name of village)
-
-| Key            | Value                                                           |
-|----------------|-----------------------------------------------------------------|
-| Term           | addressArea                                                    |
-| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_addressArea |
-| Expected Value | http://www.w3.org/ns/locn#addressArea                                      |
-
-##### 6.2.11.4 postCode {#LegalPerson_registeredAddress_postCode}
-
-post code of the city
+Post code of the city
 
 | Key            | Value                                                           |
 |----------------|-----------------------------------------------------------------|
 | Term           | postCode                                                    |
-| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_postCode |
+| URL            | https://oid.spherity.com/eucc#NaturalPerson_domicile_postCode |
 | Expected Value | http://www.w3.org/ns/locn#postCode                                      |
 
-##### 6.2.11.5 postName {#LegalPerson_registeredAddress_postName}
+##### 6.2.11.5 postName {#NaturalPerson_domicile_postName}
 
 Reflects the city name
 
 | Key            | Value                                                           |
 |----------------|-----------------------------------------------------------------|
 | Term           | postName                                                    |
-| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_postName |
+| URL            | https://oid.spherity.com/eucc#NaturalPerson_domicile_postName |
 | Expected Value | http://www.w3.org/ns/locn#postName                                      |
-
-##### 6.2.11.6 thoroughfare {#LegalPerson_registeredAddress_thoroughfare}
-
-Reflects the street name
-
-| Key            | Value                                                           |
-|----------------|-----------------------------------------------------------------|
-| Term           | thoroughfare                                                    |
-| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_thoroughfare |
-| Expected Value | http://www.w3.org/ns/locn#thoroughfare                                      |
-
-##### 6.2.11.7 locatorDesignator {#LegalPerson_registeredAddress_locatorDesignator}
-
-House number and similar
-
-| Key            | Value                                                           |
-|----------------|-----------------------------------------------------------------|
-| Term           | locatorDesignator                                                    |
-| URL            | https://oid.spherity.com/eucc#LegalPerson_registeredAddress_locatorDesignator |
-| Expected Value | http://www.w3.org/ns/locn#locatorDesignator                                      |
-
 
 ### 6.3 Properties of Nace020
 
