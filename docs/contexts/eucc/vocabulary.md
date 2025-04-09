@@ -77,7 +77,7 @@ The following example shows a Legal Person Credential:
       "addressArea": "Friedrichswerder",
       "adminUnitL1": "Germany",
       "adminUnitL2": "Berlin",
-      "locatorDesignator": 33,
+      "locatorDesignator": "33",
       "postCode": 10119,
       "postName": "Berlin",
       "thoroughfare": "Unter den Linden"
