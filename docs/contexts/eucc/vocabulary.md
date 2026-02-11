@@ -122,7 +122,7 @@ The following example represents the credential of a Natural Person:
   ],
   "type": [
     "VerifiableCredential",
-    "LegalEntityCertificate"
+    "NaturalPersonIdentificationData"
   ],
   "id": "urn:uuid:f086cced-1153-4540-993b-b4d52ca499c2",
   "validFrom": "2019-12-03T12:19:52Z",
